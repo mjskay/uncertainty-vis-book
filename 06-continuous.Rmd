@@ -9,18 +9,18 @@
     - quantile dotplots
     - HOPs
 - multivariate
-  - the joint case
-    - gradients
-    - contour plots
-  - the conditional case
-    - gradients
-    - bands
-  - generalizing quantile dotplots to multiple dimensions: representative sampling approaches
-    - scatterplots
-    - spaghetti plots
-  - HOPs
+    - the joint case
+        - gradients
+        - contour plots
+    - the conditional case
+        - gradients
+        - bands
+    - generalizing quantile dotplots to multiple dimensions: representative sampling approaches
+        - scatterplots
+        - spaghetti plots
+    - HOPs
 
 - frequentist addendum
-  - interpreting in a Bayesian mode: advantages and pitfalls (and what it reveals)
-    - *this maybe goes elsewhere*
-  - those double-sided p value plot things
+    - interpreting in a Bayesian mode: advantages and pitfalls (and what it reveals)
+        - *this maybe goes elsewhere*
+    - those double-sided p value plot things
