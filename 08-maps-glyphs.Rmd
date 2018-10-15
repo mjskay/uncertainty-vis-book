@@ -1,0 +1,13 @@
+# Maps and glyphs {#ch-maps-glyphs}
+
+*Not sure this is a separate chapter but putting this here for now...*
+
+- always remember to ask if you need a map in the first place
+- uncertainty glyphs
+    - blur, and problems with it
+    - problems with glyphs more generally
+- bivariate maps
+- VSUPs
+    - connect back to LLO and/or regularization (I think LLO...)
+- pixelation
+- HOPs

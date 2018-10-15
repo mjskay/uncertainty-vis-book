@@ -1,0 +1,16 @@
+# Foundations: General strategies {#ch-strategies}
+
+*Dunno if this goes before or after all the specific examples*
+
+- think about task
+    - what do people actually need from the representation to do the task? densities? intervals? (arbitrary or known in advance?) point estimates?
+- employ frequency framing where possible
+    - *(maybe a table here translating common non-frequency representations into frequency representations)*
+    - quantile dotplots
+    - representative sampling in scatterplots (need a better name for this)
+    - spaghettis
+    - pixelated maps (also needs a name)
+- use animation / HOPs
+- anticipate deterministic construal errors
+    - think about task context, common elements of that context with plausibly similar abstract representations
+    - when animating / using metaphor, think about the mechanism - do we think of it as random?
