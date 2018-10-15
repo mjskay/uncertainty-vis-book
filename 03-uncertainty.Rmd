@@ -1,10 +1,10 @@
 # Foundations: Uncertainty as we'll see it {#ch-uncertainty}
 
 - primarily Bayesian perspective
-  - unifies aleatory and epistemic
-  - gives us one framework to work in
-  - simplifies building things
-  - simplifies communicating things (see e.g. confidence fallacy)
+    - unifies aleatory and epistemic
+    - gives us one framework to work in
+    - simplifies building things
+    - simplifies communicating things (see e.g. confidence fallacy)
 - will still occasionally touch on frequentist, usually as a subsection at the end of each chapter: 
-  - tips on how to translate the visualization techniques presented into that mode
-  - at times, visualizations unique to the frequentist approach that might be useful
+    - tips on how to translate the visualization techniques presented into that mode
+    - at times, visualizations unique to the frequentist approach that might be useful

@@ -1,15 +1,15 @@
 # Discrete data {#ch-discrete}
 
 - categorical
-  - proportions 
-    - product plots / mosaic plots
-  - icon arrays
-    - unit visualizations
-  - HOPs-like stuff
-  - entropy-based approaches
+    - proportions 
+        - product plots / mosaic plots
+    - icon arrays
+        - unit visualizations
+    - HOPs-like stuff
+    - entropy-based approaches
 - ordinal / integer
-  - proportions
-  - histograms
-  - CDFs
-  - dotplots
-  - ...
+    - proportions
+    - histograms
+    - CDFs
+    - dotplots
+    - ...
