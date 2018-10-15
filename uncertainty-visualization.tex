@@ -117,7 +117,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter*{Preface}\label{preface}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
 This book\footnote{or what it will be---it is a work in progress} aims
@@ -129,11 +130,13 @@ visualizations using the R programming language and the grammar of
 graphics.\footnote{as implemented in the \emph{ggplot2} package
   \citep{R-ggplot2}}
 
-\chapter{Introduction}\label{ch-intro}
+\hypertarget{ch-intro}{%
+\chapter{Introduction}\label{ch-intro}}
 
 TBD
 
-\chapter{Why uncertainty visualization is hard}\label{ch-why-hard}
+\hypertarget{ch-why-hard}{%
+\chapter{Why uncertainty visualization is hard}\label{ch-why-hard}}
 
 \begin{itemize}
 \tightlist
@@ -153,7 +156,8 @@ TBD
   \begin{itemize}
   \tightlist
   \item
-    explain a CDF to someone
+    explain a CDF to someone (N.B.: sometimes this works! task has an
+    effect here)
   \end{itemize}
 \item
   Even if people understand have to deal with how people perceive
@@ -187,7 +191,9 @@ TBD
   \end{itemize}
 \end{itemize}
 
-\chapter{Foundations: Uncertainty as we'll see it}\label{ch-uncertainty}
+\hypertarget{ch-uncertainty}{%
+\chapter{Foundations: Uncertainty as we'll see
+it}\label{ch-uncertainty}}
 
 \begin{itemize}
 \tightlist
@@ -220,8 +226,9 @@ TBD
   \end{itemize}
 \end{itemize}
 
+\hypertarget{ch-vis-foundations}{%
 \chapter{Foundations: Uncertainty and the grammar of
-graphics}\label{ch-vis-foundations}
+graphics}\label{ch-vis-foundations}}
 
 \begin{itemize}
 \tightlist
@@ -234,7 +241,59 @@ graphics}\label{ch-vis-foundations}
   simple prediction grid example
 \end{itemize}
 
-\chapter{Discrete data}\label{ch-discrete}
+\hypertarget{ch-strategies}{%
+\chapter{Foundations: General strategies}\label{ch-strategies}}
+
+\emph{Dunno if this goes before or after all the specific examples}
+
+\begin{itemize}
+\tightlist
+\item
+  think about task
+
+  \begin{itemize}
+  \tightlist
+  \item
+    what do people actually need from the representation to do the task?
+    densities? intervals? (arbitrary or known in advance?) point
+    estimates?
+  \end{itemize}
+\item
+  employ frequency framing where possible
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{(maybe a table here translating common non-frequency
+    representations into frequency representations)}
+  \item
+    quantile dotplots
+  \item
+    representative sampling in scatterplots (need a better name for
+    this)
+  \item
+    spaghettis
+  \item
+    pixelated maps (also needs a name)
+  \end{itemize}
+\item
+  use animation / HOPs
+\item
+  anticipate deterministic construal errors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    think about task context, common elements of that context with
+    plausibly similar abstract representations
+  \item
+    when animating / using metaphor, think about the mechanism - do we
+    think of it as random?
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ch-discrete}{%
+\chapter{Discrete data}\label{ch-discrete}}
 
 \begin{itemize}
 \tightlist
@@ -282,7 +341,8 @@ graphics}\label{ch-vis-foundations}
   \end{itemize}
 \end{itemize}
 
-\chapter{Continuous data}\label{ch-continuous}
+\hypertarget{ch-continuous}{%
+\chapter{Continuous data}\label{ch-continuous}}
 
 \emph{not sure of the organization here, especially within
 multivariate\ldots{}}
@@ -363,7 +423,8 @@ multivariate\ldots{}}
   \end{itemize}
 \end{itemize}
 
-\chapter{Dealing with multiple uncertainties}\label{ch-multiple}
+\hypertarget{ch-multiple}{%
+\chapter{Dealing with multiple uncertainties}\label{ch-multiple}}
 
 \begin{itemize}
 \tightlist
@@ -406,6 +467,42 @@ multivariate\ldots{}}
   \item
     some hurricane stuff
   \end{itemize}
+\end{itemize}
+
+\hypertarget{ch-maps-glyphs}{%
+\chapter{Maps and glyphs}\label{ch-maps-glyphs}}
+
+\emph{Not sure this is a separate chapter but putting this here for
+now\ldots{}}
+
+\begin{itemize}
+\tightlist
+\item
+  always remember to ask if you need a map in the first place
+\item
+  uncertainty glyphs
+
+  \begin{itemize}
+  \tightlist
+  \item
+    blur, and problems with it
+  \item
+    problems with glyphs more generally
+  \end{itemize}
+\item
+  bivariate maps
+\item
+  VSUPs
+
+  \begin{itemize}
+  \tightlist
+  \item
+    connect back to LLO and/or regularization (I think LLO\ldots{})
+  \end{itemize}
+\item
+  pixelation
+\item
+  HOPs
 \end{itemize}
 
 \bibliography{book.bib,packages.bib}
