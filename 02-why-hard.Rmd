@@ -3,7 +3,7 @@
 - Efficient encodings for uncertainty can be hard to find
     - try putting mean, variance, and interval estimation in one plot + doing this when useful channels are already used up
 - Even if you get the encoding right have to contend with making sure people understand it
-    - explain a CDF to someone
+    - explain a CDF to someone (N.B.: sometimes this works! task has an effect here)
 - Even if people understand have to deal with how people perceive uncertainty
     - linear-in-log-odds and other perceptual models of probability
 - Even if people correctly perceive the uncertainty have to deal with how people make decisions under uncertainty
