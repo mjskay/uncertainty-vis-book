@@ -3,11 +3,11 @@
 *not sure of the organization here, especially within multivariate...*
 
 - univariate
-  - densities, gradients
-  - CDFs
-  - intervals
-  - quantile dotplots
-  - HOPs
+    - densities, gradients
+    - CDFs
+    - intervals
+    - quantile dotplots
+    - HOPs
 - multivariate
   - the joint case
     - gradients
