@@ -1,0 +1,5 @@
+# Foundations: Uncertainty and the grammar of graphics {#ch-vis-foundations}
+
+- basic strategies for applying uncertainty visualization within the grammar of graphics
+- visual channels, marks, etc. (and mapping onto ggplot)
+- simple prediction grid example
