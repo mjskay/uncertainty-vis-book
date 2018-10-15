@@ -1,3 +1,0 @@
-# Introduction {#intro}
-
-This book^[or what it will be---it is a work in progress] aims to provide the *why* and the *how* of uncertainty visualization. The *why* is based on what we currently know about how people interpret and make decisions from uncertainty visualizations, and the *how* is structured around generating uncertainty visualizations using the R programming language and the grammar of graphics.^[as implemented in the *ggplot2* package [@R-ggplot2]]

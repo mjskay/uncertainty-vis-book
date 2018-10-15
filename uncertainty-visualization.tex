@@ -117,7 +117,9 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Introduction}\label{ch-intro}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
 
 This book\footnote{or what it will be---it is a work in progress} aims
 to provide the \emph{why} and the \emph{how} of uncertainty
@@ -128,67 +130,104 @@ visualizations using the R programming language and the grammar of
 graphics.\footnote{as implemented in the \emph{ggplot2} package
   \citep{R-ggplot2}}
 
-\chapter{Why uncertainty visualization is hard}\label{ch-why-hard}
+\hypertarget{ch-intro}{%
+\chapter{Introduction}\label{ch-intro}}
+
+TBD
+
+\hypertarget{ch-why-hard}{%
+\chapter{Why uncertainty visualization is hard}\label{ch-why-hard}}
 
 \begin{itemize}
 \tightlist
 \item
   Efficient encodings for uncertainty can be hard to find
-\item
-  try putting mean, variance, and interval estimation in one plot +
-  doing this when useful channels are already used up
+
+  \begin{itemize}
+  \tightlist
+  \item
+    try putting mean, variance, and interval estimation in one plot +
+    doing this when useful channels are already used up
+  \end{itemize}
 \item
   Even if you get the encoding right have to contend with making sure
   people understand it
-\item
-  explain a CDF to someone
+
+  \begin{itemize}
+  \tightlist
+  \item
+    explain a CDF to someone
+  \end{itemize}
 \item
   Even if people understand have to deal with how people perceive
   uncertainty
-\item
-  linear-in-log-odds and other perceptual models of probability
+
+  \begin{itemize}
+  \tightlist
+  \item
+    linear-in-log-odds and other perceptual models of probability
+  \end{itemize}
 \item
   Even if people correctly perceive the uncertainty have to deal with
   how people make decisions under uncertainty
 \item
   Even if you solve all these problems in one context a new context may
   cause your solution to break
-\item
-  see e.g.~deterministic construal errors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    see e.g.~deterministic construal errors
+  \end{itemize}
 \item
   Plus, you still have to build the damn thing
-\item
-  But some strategies for building uncertainty vis using the grammar of
-  graphics helps a lot here (the \textbf{how} of this book)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    But some strategies for building uncertainty vis using the grammar
+    of graphics helps a lot here (the \textbf{how} of this book)
+  \end{itemize}
 \end{itemize}
 
-\chapter{Foundations: Uncertainty as we'll see it}\label{ch-uncertainty}
+\hypertarget{ch-uncertainty}{%
+\chapter{Foundations: Uncertainty as we'll see
+it}\label{ch-uncertainty}}
 
 \begin{itemize}
 \tightlist
 \item
   primarily Bayesian perspective
-\item
-  unifies aleatory and epistemic
-\item
-  gives us one framework to work in
-\item
-  simplifies building things
-\item
-  simplifies communicating things (see e.g.~confidence fallacy)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    unifies aleatory and epistemic
+  \item
+    gives us one framework to work in
+  \item
+    simplifies building things
+  \item
+    simplifies communicating things (see e.g.~confidence fallacy)
+  \end{itemize}
 \item
   will still occasionally touch on frequentist, usually as a subsection
   at the end of each chapter:
-\item
-  tips on how to translate the visualization techniques presented into
-  that mode
-\item
-  at times, visualizations unique to the frequentist approach that might
-  be useful
+
+  \begin{itemize}
+  \tightlist
+  \item
+    tips on how to translate the visualization techniques presented into
+    that mode
+  \item
+    at times, visualizations unique to the frequentist approach that
+    might be useful
+  \end{itemize}
 \end{itemize}
 
+\hypertarget{ch-vis-foundations}{%
 \chapter{Foundations: Uncertainty and the grammar of
-graphics}\label{ch-vis-foundations}
+graphics}\label{ch-vis-foundations}}
 
 \begin{itemize}
 \tightlist
@@ -201,145 +240,181 @@ graphics}\label{ch-vis-foundations}
   simple prediction grid example
 \end{itemize}
 
-\chapter{Discrete data}\label{ch-discrete}
+\hypertarget{ch-discrete}{%
+\chapter{Discrete data}\label{ch-discrete}}
 
 \begin{itemize}
 \tightlist
 \item
   categorical
-\item
-  proportions
 
   \begin{itemize}
   \tightlist
   \item
-    product plots / mosaic plots
-  \end{itemize}
-\item
-  icon arrays
+    proportions
 
-  \begin{itemize}
-  \tightlist
+    \begin{itemize}
+    \tightlist
+    \item
+      product plots / mosaic plots
+    \end{itemize}
   \item
-    unit visualizations
+    icon arrays
+
+    \begin{itemize}
+    \tightlist
+    \item
+      unit visualizations
+    \end{itemize}
+  \item
+    HOPs-like stuff
+  \item
+    entropy-based approaches
   \end{itemize}
-\item
-  HOPs-like stuff
-\item
-  entropy-based approaches
 \item
   ordinal / integer
-\item
-  proportions
-\item
-  histograms
-\item
-  CDFs
-\item
-  dotplots
-\item
-  \ldots{}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    proportions
+  \item
+    histograms
+  \item
+    CDFs
+  \item
+    dotplots
+  \item
+    \ldots{}
+  \end{itemize}
 \end{itemize}
 
-\chapter{Continuous data}\label{ch-continuous}
+\hypertarget{ch-continuous}{%
+\chapter{Continuous data}\label{ch-continuous}}
 
 \emph{not sure of the organization here, especially within
 multivariate\ldots{}}
 
 \begin{itemize}
+\tightlist
 \item
   univariate
-\item
-  densities, gradients
-\item
-  CDFs
-\item
-  intervals
-\item
-  quantile dotplots
-\item
-  HOPs
+
+  \begin{itemize}
+  \tightlist
+  \item
+    densities, gradients
+  \item
+    CDFs
+  \item
+    intervals
+  \item
+    quantile dotplots
+  \item
+    HOPs
+  \end{itemize}
 \item
   multivariate
-\item
-  the joint case
 
   \begin{itemize}
   \tightlist
   \item
-    gradients
-  \item
-    contour plots
-  \end{itemize}
-\item
-  the conditional case
+    the joint case
 
-  \begin{itemize}
-  \tightlist
+    \begin{itemize}
+    \tightlist
+    \item
+      gradients
+    \item
+      contour plots
+    \end{itemize}
   \item
-    gradients
-  \item
-    bands
-  \end{itemize}
-\item
-  generalizing quantile dotplots to multiple dimensions: representative
-  sampling approaches
+    the conditional case
 
-  \begin{itemize}
-  \tightlist
+    \begin{itemize}
+    \tightlist
+    \item
+      gradients
+    \item
+      bands
+    \end{itemize}
   \item
-    scatterplots
+    generalizing quantile dotplots to multiple dimensions:
+    representative sampling approaches
+
+    \begin{itemize}
+    \tightlist
+    \item
+      scatterplots
+    \item
+      spaghetti plots
+    \end{itemize}
   \item
-    spaghetti plots
+    HOPs
   \end{itemize}
-\item
-  HOPs
 \item
   frequentist addendum
-\item
-  interpreting in a Bayesian mode: advantages and pitfalls (and what it
-  reveals)
 
   \begin{itemize}
   \tightlist
   \item
-    \emph{this maybe goes elsewhere}
+    interpreting in a Bayesian mode: advantages and pitfalls (and what
+    it reveals)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{this maybe goes elsewhere}
+    \end{itemize}
+  \item
+    those double-sided p value plot things
   \end{itemize}
-\item
-  those double-sided p value plot things
 \end{itemize}
 
-\chapter{Dealing with multiple uncertainties}\label{ch-multiple}
+\hypertarget{ch-multiple}{%
+\chapter{Dealing with multiple uncertainties}\label{ch-multiple}}
 
 \begin{itemize}
 \tightlist
 \item
   a note on comparisons
-\item
-  univariate marginals might bite you\ldots{}
-\item
-  aleatory / epistemic (or parameter space / data space)
-\item
-  frankenplots maybe (product plots / mosaic plots / unit
-  visualizations)
-\item
-  animation
 
   \begin{itemize}
   \tightlist
   \item
-    NYT needle
+    univariate marginals might bite you\ldots{}
+  \end{itemize}
+\item
+  aleatory / epistemic (or parameter space / data space)
+
+  \begin{itemize}
+  \tightlist
   \item
-    Galton boards
+    frankenplots maybe (product plots / mosaic plots / unit
+    visualizations)
+  \item
+    animation
+
+    \begin{itemize}
+    \tightlist
+    \item
+      NYT needle
+    \item
+      Galton boards
+    \end{itemize}
   \end{itemize}
 \item
   mixing discrete and continuous
-\item
-  color with densities
-\item
-  HOPs
-\item
-  some hurricane stuff
+
+  \begin{itemize}
+  \tightlist
+  \item
+    color with densities
+  \item
+    HOPs
+  \item
+    some hurricane stuff
+  \end{itemize}
 \end{itemize}
 
 \bibliography{book.bib,packages.bib}

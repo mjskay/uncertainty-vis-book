@@ -66,6 +66,7 @@
 <li><a href="./">Uncertainty Visualization</a></li>
 
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="ch-why-hard.html"><a href="ch-why-hard.html"><i class="fa fa-check"></i><b>2</b> Why uncertainty visualization is hard</a></li>
 <li class="chapter" data-level="3" data-path="ch-uncertainty.html"><a href="ch-uncertainty.html"><i class="fa fa-check"></i><b>3</b> Foundations: Uncertainty as we’ll see it</a></li>
@@ -97,17 +98,27 @@
 <div id="ch-why-hard" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Why uncertainty visualization is hard</h1>
 <ul>
-<li>Efficient encodings for uncertainty can be hard to find</li>
+<li>Efficient encodings for uncertainty can be hard to find
+<ul>
 <li>try putting mean, variance, and interval estimation in one plot + doing this when useful channels are already used up</li>
-<li>Even if you get the encoding right have to contend with making sure people understand it</li>
+</ul></li>
+<li>Even if you get the encoding right have to contend with making sure people understand it
+<ul>
 <li>explain a CDF to someone</li>
-<li>Even if people understand have to deal with how people perceive uncertainty</li>
+</ul></li>
+<li>Even if people understand have to deal with how people perceive uncertainty
+<ul>
 <li>linear-in-log-odds and other perceptual models of probability</li>
+</ul></li>
 <li>Even if people correctly perceive the uncertainty have to deal with how people make decisions under uncertainty</li>
-<li>Even if you solve all these problems in one context a new context may cause your solution to break</li>
+<li>Even if you solve all these problems in one context a new context may cause your solution to break
+<ul>
 <li>see e.g. deterministic construal errors</li>
-<li>Plus, you still have to build the damn thing</li>
+</ul></li>
+<li>Plus, you still have to build the damn thing
+<ul>
 <li>But some strategies for building uncertainty vis using the grammar of graphics helps a lot here (the <strong>how</strong> of this book)</li>
+</ul></li>
 </ul>
 
 </div>
