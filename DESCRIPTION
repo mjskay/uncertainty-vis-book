@@ -2,4 +2,9 @@ Package: placeholder
 Type: Book
 Title: Uncertainty Visualization
 Version: 0.0.1
-Imports: bookdown
+Imports: 
+    bookdown,
+    tidyverse,
+    modelr,
+    broom,
+    ggstance
