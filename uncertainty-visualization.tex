@@ -31,6 +31,46 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -85,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-15}
+    \date{2018-10-16}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -504,6 +544,60 @@ now\ldots{}}
 \item
   HOPs
 \end{itemize}
+
+\hypertarget{scratch-space}{%
+\chapter*{Scratch space}\label{scratch-space}}
+\addcontentsline{toc}{chapter}{Scratch space}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(modelr)}
+\KeywordTok{library}\NormalTok{(broom)}
+\KeywordTok{library}\NormalTok{(ggstance)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{12345}\NormalTok{)}
+\NormalTok{x =}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\NormalTok{ci_color =}\StringTok{ "#d95f02"}
+
+\NormalTok{intervals =}\StringTok{ }\KeywordTok{data_frame}\NormalTok{(}
+    \CommentTok{# conf.level = seq(.7, .99, by = .01),}
+    \DataTypeTok{conf.level =} \KeywordTok{c}\NormalTok{(.}\DecValTok{50}\NormalTok{, }\FloatTok{.80}\NormalTok{, }\FloatTok{.95}\NormalTok{),}
+    \DataTypeTok{alpha =} \DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{conf.level,}
+    \DataTypeTok{test =} \KeywordTok{map}\NormalTok{(conf.level, }\OperatorTok{~}\StringTok{ }\KeywordTok{tidy}\NormalTok{(}\KeywordTok{t.test}\NormalTok{(x, }\DataTypeTok{conf.level =}\NormalTok{ ..}\DecValTok{1}\NormalTok{)))}
+\NormalTok{  ) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{unnest}\NormalTok{()}
+
+\KeywordTok{crossing}\NormalTok{(}
+    \DataTypeTok{null =} \KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{6}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DataTypeTok{length.out =} \DecValTok{1001}\NormalTok{)}
+\NormalTok{  ) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{test =} \KeywordTok{map}\NormalTok{(null, }\OperatorTok{~}\StringTok{ }\KeywordTok{tidy}\NormalTok{(}\KeywordTok{t.test}\NormalTok{(x, }\DataTypeTok{mu =}\NormalTok{ ..}\DecValTok{1}\NormalTok{)))) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{unnest}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ null, }\DataTypeTok{y =}\NormalTok{ p.value)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{yintercept =}\NormalTok{ alpha), }\DataTypeTok{color =} \StringTok{"gray50"}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ intervals, }\DataTypeTok{linetype =} \StringTok{"dotted"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_rect}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{xmin =}\NormalTok{ conf.low, }\DataTypeTok{xmax =}\NormalTok{ conf.high, }\DataTypeTok{ymax =}\NormalTok{ alpha), }\DataTypeTok{ymin =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{fill =}\NormalTok{ ci_color, }\DataTypeTok{alpha =} \FloatTok{.1}\NormalTok{,}
+    \DataTypeTok{data =}\NormalTok{ intervals, }\DataTypeTok{color =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{size =} \FloatTok{.75}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_pointrangeh}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{xmin =}\NormalTok{ conf.low, }\DataTypeTok{xmax =}\NormalTok{ conf.high, }\DataTypeTok{x =}\NormalTok{ estimate, }\DataTypeTok{y =}\NormalTok{ alpha), }
+    \DataTypeTok{data =}\NormalTok{ intervals, }\DataTypeTok{color =}\NormalTok{ ci_color, }\DataTypeTok{size =} \FloatTok{.75}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_vline}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{xintercept =}\NormalTok{ estimate), }\DataTypeTok{data =}\NormalTok{ intervals, }\DataTypeTok{color =}\NormalTok{ ci_color, }\DataTypeTok{linetype =} \StringTok{"dotted"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ alpha, }\DataTypeTok{label =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"p value = "}\NormalTok{, }\KeywordTok{format}\NormalTok{(alpha, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{, }\DataTypeTok{nsmall =} \DecValTok{2}\NormalTok{))),}
+    \DataTypeTok{x =} \FloatTok{-5.3}\NormalTok{, }\DataTypeTok{vjust =} \FloatTok{-.5}\NormalTok{, }\DataTypeTok{hjust =} \DecValTok{0}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ intervals, }\DataTypeTok{color =} \StringTok{"gray50"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ alpha, }\DataTypeTok{label =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"1 - "}\NormalTok{, }\KeywordTok{format}\NormalTok{(alpha, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{, }\DataTypeTok{nsmall =} \DecValTok{2}\NormalTok{), }\StringTok{" = "}\NormalTok{, }\KeywordTok{round}\NormalTok{((}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{alpha) }\OperatorTok{*}\StringTok{ }\DecValTok{100}\NormalTok{), }\StringTok{"% CI"}\NormalTok{)),}
+    \DataTypeTok{x =} \FloatTok{0.6}\NormalTok{, }\DataTypeTok{vjust =} \FloatTok{-.5}\NormalTok{, }\DataTypeTok{color =}\NormalTok{ ci_color, }\DataTypeTok{hjust =} \DecValTok{0}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ intervals) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_light}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid =} \KeywordTok{element_blank}\NormalTok{()) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"two-sided null hypothesis"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"p value"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_cartesian}\NormalTok{(}\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{uncertainty-visualization_files/figure-latex/unnamed-chunk-3-1.pdf}
 
 \bibliography{book.bib,packages.bib}
 
