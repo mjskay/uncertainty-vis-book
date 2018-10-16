@@ -561,7 +561,7 @@ now\ldots{}}
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{set.seed}\NormalTok{(}\DecValTok{12345}\NormalTok{)}
-\NormalTok{x =}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\NormalTok{x =}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{, }\FloatTok{-0.25}\NormalTok{)}
 \NormalTok{ci_color =}\StringTok{ "#d95f02"}
 
 \NormalTok{intervals =}\StringTok{ }\KeywordTok{data_frame}\NormalTok{(}
@@ -588,7 +588,7 @@ now\ldots{}}
 \StringTok{  }\KeywordTok{geom_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ alpha, }\DataTypeTok{label =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"p value = "}\NormalTok{, }\KeywordTok{format}\NormalTok{(alpha, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{, }\DataTypeTok{nsmall =} \DecValTok{2}\NormalTok{))),}
     \DataTypeTok{x =} \FloatTok{-5.3}\NormalTok{, }\DataTypeTok{vjust =} \FloatTok{-.5}\NormalTok{, }\DataTypeTok{hjust =} \DecValTok{0}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ intervals, }\DataTypeTok{color =} \StringTok{"gray50"}\NormalTok{) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ alpha, }\DataTypeTok{label =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"1 - "}\NormalTok{, }\KeywordTok{format}\NormalTok{(alpha, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{, }\DataTypeTok{nsmall =} \DecValTok{2}\NormalTok{), }\StringTok{" = "}\NormalTok{, }\KeywordTok{round}\NormalTok{((}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{alpha) }\OperatorTok{*}\StringTok{ }\DecValTok{100}\NormalTok{), }\StringTok{"% CI"}\NormalTok{)),}
-    \DataTypeTok{x =} \FloatTok{0.6}\NormalTok{, }\DataTypeTok{vjust =} \FloatTok{-.5}\NormalTok{, }\DataTypeTok{color =}\NormalTok{ ci_color, }\DataTypeTok{hjust =} \DecValTok{0}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ intervals) }\OperatorTok{+}
+    \DataTypeTok{x =} \FloatTok{0.33}\NormalTok{, }\DataTypeTok{vjust =} \FloatTok{-.5}\NormalTok{, }\DataTypeTok{color =}\NormalTok{ ci_color, }\DataTypeTok{hjust =} \DecValTok{0}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ intervals) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{theme_light}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid =} \KeywordTok{element_blank}\NormalTok{()) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"two-sided null hypothesis"}\NormalTok{) }\OperatorTok{+}
